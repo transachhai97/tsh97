@@ -9,7 +9,8 @@
     "prod": "yarn production",
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=webpack.mix.js",
     "stylelint": "stylelint \"resources/**/*.{vue,htm,html,css,sss,less,scss,sass}\" --fix",
-    "eslint": "eslint \"resources/**/*.{js,vue}\" --fix"
+    "eslint": "eslint \"resources/**/*.{js,vue}\" --fix",
+    "clean": "yarn stylelint && yarn eslint"
   },
   "dependencies": {
     "axios": "^0.19.2",
