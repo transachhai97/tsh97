@@ -25,5 +25,15 @@
     "vue": "^2.5.17",
     "vue-template-compiler": "^2.6.10",
     "webpack-livereload-plugin": "^2.3.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0%"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
