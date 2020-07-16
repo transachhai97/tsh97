@@ -1,6 +1,7 @@
 const mix = require('laravel-mix');
-
 const LiveReloadPlugin = require('webpack-livereload-plugin');
+
+const isProduction = mix.inProduction();
 
 /*
  |--------------------------------------------------------------------------
@@ -45,6 +46,31 @@ mix.webpackConfig({
     }
 });
 
+if (isProduction) {
+    mix.version();
+    mix.options({
+        terser: {
+            terserOptions: {
+                compress: {
+                    drop_console: true,
+                },
+            },
+            extractComments: false,
+        },
+        cssNano: {
+            discardComments: {
+                removeAll: true,
+            },
+        },
+    });
+} else {
+    mix.sourceMaps(true, "cheap-module-source-map");
+    mix.disableNotifications();
+}
 
 mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css');
+    .sass('resources/sass/app.scss', 'public/css', {
+        sassOptions: {
+            outputStyle: isProduction ? "compressed" : "expanded",
+        },
+    });
