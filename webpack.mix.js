@@ -15,7 +15,9 @@ const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 mix.webpackConfig({
     plugins: [
-        new LiveReloadPlugin()
+        new LiveReloadPlugin({
+            port: 1997
+        })
     ],
     resolve: {
         extensions: ['.js', '.vue', '.json'],
