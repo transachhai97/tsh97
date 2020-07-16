@@ -1,5 +1,6 @@
 const mix = require('laravel-mix');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const isProduction = mix.inProduction();
 
@@ -21,6 +22,9 @@ mix.webpackConfig({
     plugins: [
         new LiveReloadPlugin({
             port: 1997
+        }),
+        new StyleLintPlugin({
+            files: [resourcesPath + '/**/*.{vue,htm,html,css,sss,less,scss,sass}'],
         })
     ],
     resolve: {
