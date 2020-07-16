@@ -12,6 +12,7 @@ module.exports = {
         "webpack.mix.js"
     ],
     "rules": {
+        "indentation": 4,
         "rule-empty-line-before": [
             "always",
             {
