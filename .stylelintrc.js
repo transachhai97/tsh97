@@ -7,6 +7,9 @@ module.exports = {
         "stylelint-order",
         "stylelint-config-rational-order/plugin"
     ],
+    "ignoreFiles": [
+        "webpack.mix.js"
+    ],
     "rules": {
         "rule-empty-line-before": [
             "always",
