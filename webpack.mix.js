@@ -3,6 +3,9 @@ const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 const isProduction = mix.inProduction();
 
+const publicPath = "public/assets";
+const resourcesPath = "resources/assets";
+
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -23,7 +26,7 @@ mix.webpackConfig({
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
-            '@': __dirname + '/resources/assets/js'
+            '@': __dirname + '/' + resourcesPath + '/js'
         },
     },
     module: {
@@ -75,8 +78,10 @@ mix.options({
     },
 });
 
-mix.js('resources/assets/js/app.js', 'public/assets/js')
-    .sass('resources/assets/sass/app.scss', 'public/assets/css', {
+mix.setPublicPath(publicPath);
+
+mix.js(resourcesPath + '/js/app.js', publicPath + '/js')
+    .sass(resourcesPath + '/sass/app.scss', publicPath + '/css', {
         sassOptions: {
             outputStyle: isProduction ? "compressed" : "expanded",
         },
