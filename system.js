@@ -1,5 +1,5 @@
 System.config({
     paths: {
-        "@/*": "resources/js/*",
+        "@/*": "resources/assets/js/*",
     },
 });

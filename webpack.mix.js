@@ -23,7 +23,7 @@ mix.webpackConfig({
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
-            '@': __dirname + '/resources/js'
+            '@': __dirname + '/resources/assets/js'
         },
     },
     module: {
@@ -68,8 +68,15 @@ if (isProduction) {
     mix.disableNotifications();
 }
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css', {
+mix.options({
+    fileLoaderDirs: {
+        images: "assets/images",
+        fonts: "assets/fonts",
+    },
+});
+
+mix.js('resources/assets/js/app.js', 'public/assets/js')
+    .sass('resources/assets/sass/app.scss', 'public/assets/css', {
         sassOptions: {
             outputStyle: isProduction ? "compressed" : "expanded",
         },
