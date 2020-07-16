@@ -4,8 +4,8 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const isProduction = mix.inProduction();
 
-const publicPath = "public/assets";
-const resourcesPath = "resources/assets";
+const publicPath = 'public/assets';
+const resourcesPath = 'resources/assets';
 
 /*
  |--------------------------------------------------------------------------
@@ -21,36 +21,43 @@ const resourcesPath = "resources/assets";
 mix.webpackConfig({
     plugins: [
         new LiveReloadPlugin({
-            port: 1997
+            port: 1997,
         }),
         new StyleLintPlugin({
-            files: [resourcesPath + '/**/*.{vue,htm,html,css,sss,less,scss,sass}'],
-        })
+            files: [`${resourcesPath}/**/*.{vue,htm,html,css,sss,less,scss,sass}`],
+        }),
     ],
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
-            '@': __dirname + '/' + resourcesPath + '/js'
+            '@': `${__dirname}/${resourcesPath}/js`,
         },
     },
     module: {
         rules: [
+            {
+                enforce: 'pre',
+                test: /\.(js|vue)$/,
+                exclude: /node_modules/,
+                loader: 'eslint-loader',
+                options: {},
+            },
             {
                 test: /\.pug$/,
                 oneOf: [
                     // this applies to `<template lang="pug">` in Vue components
                     {
                         resourceQuery: /^\?vue/,
-                        use: ['pug-plain-loader']
+                        use: ['pug-plain-loader'],
                     },
                     // this applies to pug imports inside JavaScript
                     {
-                        use: ['raw-loader', 'pug-plain-loader']
-                    }
-                ]
-            }
-        ]
-    }
+                        use: ['raw-loader', 'pug-plain-loader'],
+                    },
+                ],
+            },
+        ],
+    },
 });
 
 if (isProduction) {
@@ -71,22 +78,22 @@ if (isProduction) {
         },
     });
 } else {
-    mix.sourceMaps(true, "cheap-module-source-map");
+    mix.sourceMaps(true, 'cheap-module-source-map');
     mix.disableNotifications();
 }
 
 mix.options({
     fileLoaderDirs: {
-        images: "assets/images",
-        fonts: "assets/fonts",
+        images: 'assets/images',
+        fonts: 'assets/fonts',
     },
 });
 
 mix.setPublicPath(publicPath);
 
-mix.js(resourcesPath + '/js/app.js', publicPath + '/js')
-    .sass(resourcesPath + '/sass/app.scss', publicPath + '/css', {
+mix.js(`${resourcesPath}/js/app.js`, `${publicPath}/js`)
+    .sass(`${resourcesPath}/sass/app.scss`, `${publicPath}/css`, {
         sassOptions: {
-            outputStyle: isProduction ? "compressed" : "expanded",
+            outputStyle: isProduction ? 'compressed' : 'expanded',
         },
     });

@@ -8,6 +8,7 @@ module.exports = {
         "stylelint-config-rational-order/plugin"
     ],
     "ignoreFiles": [
+        ".eslintrc.js",
         "webpack.mix.js"
     ],
     "rules": {
