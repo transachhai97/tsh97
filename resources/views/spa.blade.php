@@ -12,7 +12,7 @@
     <example-component></example-component>
 </div>
 <script src="{{asset(mix('js/app.js', 'assets'))}}"></script>
-@if(config('app.env') == 'local')
+@if(config('app.debug') == true )
     <script src="http://localhost:1997/livereload.js"></script>
 @endif
 </body>
