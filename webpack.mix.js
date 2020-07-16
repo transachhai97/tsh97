@@ -1,5 +1,8 @@
+// eslint-disable-next-line import/no-extraneous-dependencies
 const mix = require('laravel-mix');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const LiveReloadPlugin = require('webpack-livereload-plugin');
+// eslint-disable-next-line import/no-extraneous-dependencies
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const isProduction = mix.inProduction();
