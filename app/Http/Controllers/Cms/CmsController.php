@@ -10,6 +10,6 @@ class CmsController extends Controller
     //
     public function index()
     {
-        return 'CMS';
+        return view('cms.index');
     }
 }
