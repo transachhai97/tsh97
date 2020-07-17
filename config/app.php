@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'debug' => (bool) env('APP_DEBUG', false),
+    'debug' => (bool)env('APP_DEBUG', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -166,6 +166,13 @@ return [
          * Package Service Providers...
          */
 
+        // Debug
+        App\Providers\DebugServiceProvider::class,
+        // Helper
+        App\Providers\HelperServiceProvider::class,
+        // Host
+        App\Providers\HostServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -174,11 +181,6 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
-        // Debug
-        App\Providers\DebugServiceProvider::class,
-        // Helper
-        App\Providers\HelperServiceProvider::class,
 
     ],
 

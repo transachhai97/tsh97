@@ -45,9 +45,13 @@ class RouteServiceProvider extends ServiceProvider
         $this->mapApiRoutes();
 
         // CMS
-        $this->mapCmsRoutes();
+        if (true === config('isCms')) {
+            $this->mapCmsRoutes();
+        }
 
-        $this->mapWebRoutes();
+        if (true === config('isWeb')) {
+            $this->mapWebRoutes();
+        }
     }
 
     /**
@@ -70,8 +74,7 @@ class RouteServiceProvider extends ServiceProvider
      */
     protected function mapCmsRoutes()
     {
-        Route::prefix('cms')
-            ->middleware('cms')
+        Route::middleware('cms')
             ->namespace($this->namespace . '\\Cms')
             ->group(base_path('routes/cms.php'));
     }
