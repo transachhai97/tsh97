@@ -176,7 +176,9 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         // Debug
-        App\Providers\DebugServiceProvider::class
+        App\Providers\DebugServiceProvider::class,
+        // Helper
+        App\Providers\HelperServiceProvider::class,
 
     ],
 
