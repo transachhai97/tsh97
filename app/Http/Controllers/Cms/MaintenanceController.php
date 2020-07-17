@@ -2,11 +2,10 @@
 
 namespace App\Http\Controllers\Cms;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
 
-class MaintenanceController extends Controller
+class MaintenanceController extends CmsController
 {
     //
     public function __invoke(Request $request)

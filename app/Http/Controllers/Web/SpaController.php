@@ -2,9 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
-use App\Http\Controllers\Controller;
-
-class SpaController extends Controller
+class SpaController extends BaseController
 {
     public function __invoke()
     {

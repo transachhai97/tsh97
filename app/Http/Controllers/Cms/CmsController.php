@@ -7,9 +7,5 @@ use Illuminate\Http\Request;
 
 class CmsController extends Controller
 {
-    //
-    public function index()
-    {
-        return viewCms('index');
-    }
+
 }
