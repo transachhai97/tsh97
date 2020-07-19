@@ -36,6 +36,10 @@ mix.webpackConfig({
             '@': `${__dirname}/${resourcesPath}/js`,
         },
     },
+    output: {
+        publicPath: '/assets/',
+        chunkFilename: isProduction ? 'js/chunks/[name].[chunkhash].js' : 'js/chunks/[name].js',
+    },
     module: {
         rules: [
             {
