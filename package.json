@@ -10,7 +10,8 @@
     "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js --env.mixfile=webpack.mix.js",
     "stylelint": "stylelint \"resources/**/*.{vue,htm,html,css,sss,less,scss,sass}\" --fix",
     "eslint": "eslint \"resources/**/*.{js,vue}\" --fix",
-    "clean": "yarn stylelint && yarn eslint"
+    "pug": "prettier --list-different --write \"resources/**/*.pug\"",
+    "clean": "yarn stylelint && yarn eslint && yarn pug"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -31,6 +32,8 @@
     "eslint-plugin-import": "^2.22.0",
     "eslint-plugin-vue": "^6.2.2",
     "laravel-mix": "^5.0.1",
+    "prettier": "^2.0.5",
+    "prettier-plugin-pug": "^1.0.0-alpha.8",
     "pug": "^3.0.0",
     "pug-plain-loader": "^1.0.0",
     "resolve-url-loader": "^2.3.1",
