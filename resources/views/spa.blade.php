@@ -9,7 +9,6 @@
 </head>
 <body>
 <div id="app">
-    <example-component></example-component>
 </div>
 <script src="{{asset(mix('js/app.js', 'assets'))}}"></script>
 @if(config('app.debug') == true )

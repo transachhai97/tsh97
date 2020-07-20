@@ -6,6 +6,8 @@
 
 import Vue from 'vue';
 import i18n from '@/plugins/i18n';
+import router from '@/plugins/router';
+import App from '@/views/App';
 
 require('@/bootstrap');
 
@@ -20,9 +22,9 @@ require('@/bootstrap');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-const ExampleComponent = () => import('@/views/ExampleComponent.vue');
-
-Vue.component('example-component', ExampleComponent);
+// const ExampleComponent = () => import('@/views/ExampleComponent.vue');
+//
+// Vue.component('example-component', ExampleComponent);
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -32,6 +34,8 @@ Vue.component('example-component', ExampleComponent);
 
 const app = new Vue({
     i18n,
+    router,
+    render: (h) => h(App),
 }).$mount('#app');
 
 export default app;
