@@ -2,8 +2,19 @@
 
 <script>
 export default {
+    data() {
+        return {
+            language: this.$i18n.locale,
+        };
+    },
     mounted() {
         console.log('Component mounted.');
+    },
+    methods: {
+        changeLanguage() {
+            this.$i18n.locale = this.language;
+            fetch(`/lang/${this.language}`);
+        },
     },
 };
 </script>

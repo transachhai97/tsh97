@@ -1,6 +1,10 @@
 .container
     .row.justify-content-center
         .col-md-8
+            select.form-select(@change="changeLanguage", v-model="language")
+                option(value="en") {{ $t('english') }}
+                option(value="vi") {{ $t('vietnamese') }}
+        .col-md-8
             .card
                 .card-header {{ $t('welcome') }}
                 .card-body

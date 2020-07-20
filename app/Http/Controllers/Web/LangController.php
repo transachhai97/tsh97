@@ -11,6 +11,6 @@ class LangController extends BaseController
     {
         app()->setLocale($locale);
         session()->put('locale', $locale);
-        return redirect()->back();
+        return $locale;
     }
 }
