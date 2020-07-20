@@ -1,2 +1,1 @@
-<?php
-dd('cms');
+{{ __('message.welcome') }}
