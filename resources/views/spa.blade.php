@@ -10,6 +10,9 @@
 <body>
 <div id="app">
 </div>
+<script>
+    window.configApp = @json($configApp);
+</script>
 <script src="{{asset(mix('js/app.js', 'assets'))}}"></script>
 @if(config('app.debug') == true )
     <script src="http://localhost:1997/livereload.js"></script>

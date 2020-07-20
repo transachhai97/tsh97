@@ -13,5 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('lang/{locale}', 'LangController')
+    ->where('locale', 'en|vi')
+    ->name('lang');
+
 Route::get('/{any}', 'SpaController')
     ->where('any', '.*');

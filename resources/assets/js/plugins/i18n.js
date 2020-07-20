@@ -5,8 +5,8 @@ import messages from '@/locale';
 Vue.use(VueI18n);
 
 const i18n = new VueI18n({
-    locale: 'vi',
-    fallbackLocale: 'vi',
+    locale: window.configApp?.lang ?? 'vi',
+    fallbackLocale: window.configApp?.lang ?? 'vi',
     messages,
 });
 

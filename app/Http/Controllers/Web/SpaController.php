@@ -6,6 +6,9 @@ class SpaController extends BaseController
 {
     public function __invoke()
     {
-        return view('spa');
+        $configApp = [
+            'lang' => app()->getLocale()
+        ];
+        return view('spa', compact('configApp'));
     }
 }
