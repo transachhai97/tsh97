@@ -7,7 +7,8 @@ const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 const isProduction = mix.inProduction();
 
-const publicPath = 'public/assets';
+const assets = 'assets';
+const publicPath = `public/${assets}`;
 const resourcesPath = 'resources/assets';
 
 /*
@@ -37,7 +38,7 @@ mix.webpackConfig({
         },
     },
     output: {
-        publicPath: '/assets/',
+        publicPath: `/${assets}/`,
         chunkFilename: isProduction ? 'js/chunks/[name].[chunkhash].js' : 'js/chunks/[name].js',
     },
     module: {
@@ -91,8 +92,8 @@ if (isProduction) {
 
 mix.options({
     fileLoaderDirs: {
-        images: 'assets/images',
-        fonts: 'assets/fonts',
+        images: `${assets}/images`,
+        fonts: `${assets}/fonts`,
     },
 });
 
