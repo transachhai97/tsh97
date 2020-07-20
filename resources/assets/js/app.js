@@ -5,6 +5,7 @@
  */
 
 import Vue from 'vue';
+import i18n from '@/plugins/i18n';
 
 require('@/bootstrap');
 
@@ -30,7 +31,7 @@ Vue.component('example-component', ExampleComponent);
  */
 
 const app = new Vue({
-    el: '#app',
-});
+    i18n,
+}).$mount('#app');
 
 export default app;
