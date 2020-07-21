@@ -69,7 +69,6 @@ mix.webpackConfig({
 });
 
 if (isProduction) {
-    mix.version();
     mix.options({
         terser: {
             terserOptions: {
@@ -98,6 +97,8 @@ mix.options({
 });
 
 mix.setPublicPath(publicPath);
+
+mix.version();
 
 mix.js(`${resourcesPath}/js/app.js`, `${publicPath}/js`)
     .sass(`${resourcesPath}/sass/app.scss`, `${publicPath}/css`, {
