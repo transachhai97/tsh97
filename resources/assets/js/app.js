@@ -5,11 +5,11 @@
  */
 
 import Vue from 'vue';
+import axios from 'axios';
+
 import i18n from '@/plugins/i18n';
 import router from '@/plugins/router';
 import App from '@/views/App';
-
-require('@/bootstrap');
 
 /**
  * The following block of code may be used to automatically register your
@@ -31,6 +31,8 @@ require('@/bootstrap');
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+
+Vue.prototype.$http = axios;
 
 const app = new Vue({
     i18n,

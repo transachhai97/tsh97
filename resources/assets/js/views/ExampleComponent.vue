@@ -13,7 +13,7 @@ export default {
     methods: {
         changeLanguage() {
             this.$i18n.locale = this.language;
-            fetch(`/lang/${this.language}`);
+            this.$http.get(`/lang/${this.language}`);
         },
     },
 };
