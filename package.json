@@ -11,6 +11,7 @@
     "stylelint": "stylelint \"resources/**/*.{vue,htm,html,css,sss,less,scss,sass}\" --fix",
     "eslint": "eslint \"resources/**/*.{js,vue}\" --fix",
     "pug": "prettier --list-different --write \"resources/**/*.pug\"",
+    "html": "pug --pretty \"resources/assets/js/templates\"",
     "clean": "yarn stylelint && yarn eslint && yarn pug"
   },
   "dependencies": {
