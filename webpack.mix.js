@@ -72,7 +72,6 @@ mix.webpackConfig({
 });
 
 if (isProduction) {
-    mix.versionHash();
     mix.options({
         terser: {
             terserOptions: {
@@ -89,13 +88,14 @@ if (isProduction) {
         },
     });
 } else {
-    mix.version();
     mix.sourceMaps(true, 'cheap-module-source-map');
     mix.disableNotifications();
 }
 
 mix.setPublicPath(publicPath);
 mix.setResourceRoot(`/${assets}`);
+
+mix.versionHash();
 
 mix.js(`${resourcesPath}/js/app.js`, `${publicPath}/js`)
     .sass(`${resourcesPath}/sass/app.scss`, `${publicPath}/css`, {
