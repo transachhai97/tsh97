@@ -94,14 +94,8 @@ if (isProduction) {
     mix.disableNotifications();
 }
 
-mix.options({
-    fileLoaderDirs: {
-        images: `${assets}/images`,
-        fonts: `${assets}/fonts`,
-    },
-});
-
 mix.setPublicPath(publicPath);
+mix.setResourceRoot(`/${assets}`);
 
 mix.js(`${resourcesPath}/js/app.js`, `${publicPath}/js`)
     .sass(`${resourcesPath}/sass/app.scss`, `${publicPath}/css`, {
