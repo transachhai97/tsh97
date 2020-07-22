@@ -5,6 +5,9 @@ const LiveReloadPlugin = require('webpack-livereload-plugin');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
+// eslint-disable-next-line import/no-extraneous-dependencies
+require('laravel-mix-versionhash');
+
 const isProduction = mix.inProduction();
 
 const assets = 'assets';
@@ -69,6 +72,7 @@ mix.webpackConfig({
 });
 
 if (isProduction) {
+    mix.versionHash();
     mix.options({
         terser: {
             terserOptions: {
@@ -85,6 +89,7 @@ if (isProduction) {
         },
     });
 } else {
+    mix.version();
     mix.sourceMaps(true, 'cheap-module-source-map');
     mix.disableNotifications();
 }
@@ -97,8 +102,6 @@ mix.options({
 });
 
 mix.setPublicPath(publicPath);
-
-mix.version();
 
 mix.js(`${resourcesPath}/js/app.js`, `${publicPath}/js`)
     .sass(`${resourcesPath}/sass/app.scss`, `${publicPath}/css`, {

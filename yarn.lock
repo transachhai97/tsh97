@@ -6110,6 +6110,13 @@ known-css-properties@^0.19.0:
   resolved "https://registry.yarnpkg.com/known-css-properties/-/known-css-properties-0.19.0.tgz#5d92b7fa16c72d971bda9b7fe295bdf61836ee5b"
   integrity sha512-eYboRV94Vco725nKMlpkn3nV2+96p9c3gKXRsYqAJSswSENvBhN7n5L+uDhY58xQa0UukWsDMTGELzmD8Q+wTA==
 
+laravel-mix-versionhash@^1.1.6:
+  version "1.1.6"
+  resolved "https://registry.yarnpkg.com/laravel-mix-versionhash/-/laravel-mix-versionhash-1.1.6.tgz#9fa0119af54927679c2566572a2de52351b3ad4e"
+  integrity sha512-K0yR2WY3dRxU1pjWh9gtI5NWpTpJV11OvNoB1L3q6cBjUBahBffha39+JgwUS7m93tWtamD3YySHIHbpfjLFXQ==
+  dependencies:
+    proxy-method "^1.0.0"
+
 laravel-mix@^5.0.1:
   version "5.0.4"
   resolved "https://registry.yarnpkg.com/laravel-mix/-/laravel-mix-5.0.4.tgz#606a28781b936d66cf96a0d631909cea22ebf0a8"
@@ -8334,6 +8341,11 @@ proxy-addr@~2.0.5:
   dependencies:
     forwarded "~0.1.2"
     ipaddr.js "1.9.1"
+
+proxy-method@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/proxy-method/-/proxy-method-1.0.0.tgz#0a05ac02f382df572e5af97456a50720646f75f5"
+  integrity sha512-KBLBVQ2ST9X3HPMJXPcW7+buB/AoltDrM8O8gMF5KleLfIhYt9TiVFKjk7Vt9hTTQ04pJP1z6kw6C+ofNvDjVg==
 
 prr@~1.0.1:
   version "1.0.1"
