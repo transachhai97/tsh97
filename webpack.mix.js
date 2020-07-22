@@ -39,7 +39,7 @@ mix.webpackConfig({
     },
     output: {
         publicPath: `/${assets}/`,
-        chunkFilename: isProduction ? 'js/chunks/[name].[chunkhash].js' : 'js/chunks/[name].js',
+        chunkFilename: isProduction ? 'js/chunks/[name].[chunkhash].js' : 'js/chunks/[name].js?v=[chunkhash:8]',
     },
     module: {
         rules: [
