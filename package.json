@@ -48,6 +48,7 @@
     "stylelint-scss": "^3.18.0",
     "stylelint-webpack-plugin": "^2.1.0",
     "vue-template-compiler": "^2.6.10",
+    "webpack-bundle-analyzer": "^3.8.0",
     "webpack-livereload-plugin": "^2.3.0"
   },
   "browserslist": {

@@ -4,6 +4,8 @@ const mix = require('laravel-mix');
 const LiveReloadPlugin = require('webpack-livereload-plugin');
 // eslint-disable-next-line import/no-extraneous-dependencies
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+// eslint-disable-next-line import/no-extraneous-dependencies
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 // eslint-disable-next-line import/no-extraneous-dependencies
 require('laravel-mix-versionhash');
@@ -33,6 +35,7 @@ mix.webpackConfig({
         new StyleLintPlugin({
             files: [`${resourcesPath}/**/*.{vue,htm,html,css,sss,less,scss,sass}`],
         }),
+        new BundleAnalyzerPlugin()
     ],
     resolve: {
         extensions: ['.js', '.vue', '.json'],
