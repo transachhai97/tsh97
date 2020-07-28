@@ -35,10 +35,10 @@ mix.webpackConfig({
         new StyleLintPlugin({
             files: [`${resourcesPath}/**/*.{vue,htm,html,css,sss,less,scss,sass}`],
         }),
-        new BundleAnalyzerPlugin({
+        !isProduction && new BundleAnalyzerPlugin({
             openAnalyzer: false,
         }),
-    ],
+    ].filter((plugin) => plugin),
     resolve: {
         extensions: ['.js', '.vue', '.json'],
         alias: {
